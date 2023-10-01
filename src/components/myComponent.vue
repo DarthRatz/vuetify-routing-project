@@ -11,15 +11,8 @@
     </v-system-bar>
 
     <v-navigation-drawer v-model="drawer">
-      <v-sheet
-        color="grey-lighten-4"
-        class="pa-4"
-      >
-        <v-avatar
-          class="mb-4"
-          color="grey-darken-1"
-          size="64"
-        ></v-avatar>
+      <v-sheet color="grey-lighten-4" class="pa-4">
+        <v-avatar class="mb-4" color="grey-darken-1" size="64"></v-avatar>
 
         <div>john@google.com</div>
       </v-sheet>
@@ -38,16 +31,9 @@
     </v-navigation-drawer>
 
     <v-main>
-      <v-container
-        class="py-8 px-6"
-        fluid
-      >
+      <v-container class="py-8 px-6" fluid>
         <v-row>
-          <v-col
-            v-for="card in cards"
-            :key="card"
-            cols="12"
-          >
+          <v-col v-for="card in cards" :key="card" cols="12">
             <v-card>
               <v-list lines="two">
                 <v-list-subheader :title="card"></v-list-subheader>
@@ -58,9 +44,13 @@
                       <v-avatar color="grey-darken-1"></v-avatar>
                     </template>
 
-                    <v-list-item-title :title="`Message ${n}`"></v-list-item-title>
+                    <v-list-item-title
+                      :title="`Message ${n}`"
+                    ></v-list-item-title>
 
-                    <v-list-item-subtitle title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil repellendus distinctio similique"></v-list-item-subtitle>
+                    <v-list-item-subtitle
+                      title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil repellendus distinctio similique"
+                    ></v-list-item-subtitle>
                   </v-list-item>
 
                   <v-divider
@@ -79,30 +69,30 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue'
+import { ref } from "vue";
 
-  const cards = ['Today', 'Yesterday']
-  const links = [
-    ['mdi-inbox-arrow-down', 'Inbox'],
-    ['mdi-send', 'Send'],
-    ['mdi-delete', 'Trash'],
-    ['mdi-alert-octagon', 'Spam'],
-  ]
+const cards = ["Today", "Yesterday"];
+const links = [
+  ["mdi-inbox-arrow-down", "Inbox"],
+  ["mdi-send", "Send"],
+  ["mdi-delete", "Trash"],
+  ["mdi-alert-octagon", "Spam"],
+];
 
-  const drawer = ref(null)
+const drawer = ref(null);
 </script>
 
 <script lang="ts">
-  export default {
-    data: () => ({
-      cards: ['Today', 'Yesterday'],
-      drawer: null,
-      links: [
-        ['mdi-inbox-arrow-down', 'Inbox'],
-        ['mdi-send', 'Send'],
-        ['mdi-delete', 'Trash'],
-        ['mdi-alert-octagon', 'Spam'],
-      ],
-    }),
-  }
+export default {
+  data: () => ({
+    cards: ["Today", "Yesterday"],
+    drawer: null,
+    links: [
+      ["mdi-inbox-arrow-down", "Inbox"],
+      ["mdi-send", "Send"],
+      ["mdi-delete", "Trash"],
+      ["mdi-alert-octagon", "Spam"],
+    ],
+  }),
+};
 </script>
